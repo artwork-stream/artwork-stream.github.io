@@ -27,7 +27,7 @@ document.addEventListener('click', (e) => {
 // Menu Toggle & Section Switch
 const menuPanel = document.getElementById('menuPanel');
 const menuBtns = document.querySelectorAll('.menu-btn');
-const sections = document.querySelectorAll('.home-section, .about-section, .shop-section, .business-section, .services-section, .contact-section');
+const sections = document.querySelectorAll('.home-section, .about-section, .business-section, .services-section, .contact-section');
 
 menuToggle.addEventListener('click', (e) => {
   e.stopPropagation();
