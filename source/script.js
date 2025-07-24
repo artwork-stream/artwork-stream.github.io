@@ -27,7 +27,7 @@ document.addEventListener('click', (e) => {
 // Menu Toggle & Section Switch
 const menuPanel = document.getElementById('menuPanel');
 const menuBtns = document.querySelectorAll('.menu-btn');
-const sections = document.querySelectorAll('.home-section, .about-section, .business-section, .services-section, .contact-section');
+const sections = document.querySelectorAll('.home-section, .about-section, .projects-section, .services-section, .contact-section');
 
 menuToggle.addEventListener('click', (e) => {
   e.stopPropagation();
@@ -49,140 +49,6 @@ document.addEventListener('click', (e) => {
     menuPanel.classList.add('hidden');
   }
 });
-
-// Product Carousel, Category Filter & Cart
-let allItems = [];
-let currentCategory = 'clothes';
-let currentIndex = 0;
-
-const productScroll = document.getElementById('productScroll');
-const buttons = document.querySelectorAll('.shop-categories button');
-const cartList = document.getElementById('cart-list');
-const emptyCartMsg = document.getElementById('empty-cart');
-const cartTotal = document.getElementById('cart-total');
-const whatsappLink = document.getElementById('whatsapp-link');
-const clearCartBtn = document.getElementById('clear-cart');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-
-function renderProducts(data) {
-  productScroll.innerHTML = '';
-  data.forEach(product => {
-    const div = document.createElement('div');
-    div.className = 'product-item';
-    div.dataset.category = product.category;
-    div.innerHTML = `
-      <img src="${product.image}" alt="${product.name}">
-      <h3>${product.name}</h3>
-      <p>IDR ${product.price.toLocaleString('id-ID')}</p>
-      <a href="#" class="order-btn neumorphic add-to-cart-btn">Add to Cart</a>
-    `;
-    productScroll.appendChild(div);
-  });
-
-  allItems = Array.from(document.querySelectorAll('.product-item'));
-  setupAddToCartButtons();
-  showCurrentItem();
-}
-
-function showCurrentItem() {
-  const filtered = allItems.filter(item => item.dataset.category === currentCategory);
-  allItems.forEach(item => item.style.display = 'none');
-  if (filtered[currentIndex]) filtered[currentIndex].style.display = 'flex';
-
-  prevBtn.disabled = currentIndex === 0;
-  nextBtn.disabled = currentIndex >= filtered.length - 1;
-}
-
-function searchItems() {
-  const input = document.getElementById('searchInput').value.toLowerCase();
-  allItems.forEach(item => {
-    const name = item.querySelector('h3').textContent.toLowerCase();
-    item.style.display = name.includes(input) ? 'flex' : 'none';
-  });
-}
-
-function setupAddToCartButtons() {
-  document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-      const product = btn.closest('.product-item');
-      const name = product.querySelector('h3').textContent;
-      const price = parseInt(product.querySelector('p').textContent.replace(/\D/g, ''));
-
-      const li = document.createElement('li');
-      li.setAttribute('data-name', name);
-      li.setAttribute('data-price', price);
-      li.innerHTML = `${name} - IDR ${price.toLocaleString('id-ID')} <button class="remove-btn neumorphic">Cancel</button>`;
-
-      li.querySelector('.remove-btn').addEventListener('click', () => {
-        li.remove();
-        updateCart();
-      });
-
-      cartList.appendChild(li);
-      updateCart();
-    });
-  });
-}
-
-function updateCart() {
-  const cartItems = cartList.querySelectorAll('li');
-  let total = 0;
-  const orderText = [];
-
-  cartItems.forEach(item => {
-    const name = item.getAttribute('data-name');
-    const price = parseInt(item.getAttribute('data-price'));
-    total += price;
-    orderText.push(`- ${name} (IDR ${price.toLocaleString('id-ID')})`);
-  });
-
-  cartTotal.textContent = `Total : IDR ${total.toLocaleString('id-ID')}`;
-  emptyCartMsg.style.display = cartItems.length ? 'none' : 'block';
-
-  if (cartItems.length > 0) {
-    const message = encodeURIComponent(`Halo, saya ingin memesan:\n\n${orderText.join('\n')}\n\nTotal : IDR ${total.toLocaleString('id-ID')}`);
-    whatsappLink.href = `https://wa.me/+15555555555?text=${message}`;
-  } else {
-    whatsappLink.href = '#';
-  }
-}
-
-buttons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    currentCategory = btn.dataset.category;
-    currentIndex = 0;
-    showCurrentItem();
-  });
-});
-
-prevBtn.addEventListener('click', () => {
-  if (currentIndex > 0) {
-    currentIndex--;
-    showCurrentItem();
-  }
-});
-
-nextBtn.addEventListener('click', () => {
-  const filtered = allItems.filter(item => item.dataset.category === currentCategory);
-  if (currentIndex < filtered.length - 1) {
-    currentIndex++;
-    showCurrentItem();
-  }
-});
-
-clearCartBtn.addEventListener('click', () => {
-  cartList.innerHTML = '';
-  updateCart();
-});
-
-document.getElementById('searchInput').addEventListener('input', searchItems);
-
-// Load JSON data
-fetch('library/products.json')
-  .then(res => res.json())
-  .then(data => renderProducts(data));
 
   // Music Player
   const musicToggle = document.getElementById('musicToggle');
