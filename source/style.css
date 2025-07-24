@@ -682,6 +682,28 @@ footer a {
   text-align: center;
 } 
 
+.about-photo {
+  width: 90%;
+  max-height: 300px;
+  padding: 15px;
+  margin: 0 auto;
+  margin-top: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius); 
+  object-fit: cover;
+  filter:
+  drop-shadow(-1px -1px 2px rgba(255, 255, 255, 0.2))
+  drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.9));
+}
+
 .about-bio {
   margin: 0 auto 20px auto; 
   padding: 15px;
