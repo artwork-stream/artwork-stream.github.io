@@ -66,9 +66,6 @@
     <button class="neumorphic menu-btn" data-target=".about-section">
       <i class="fas fa-info-circle"></i> About 
     </button>
-    <button class="neumorphic menu-btn" data-target=".shop-section">
-      <i class="fas fa-store"></i> Store
-    </button>
     <button class="neumorphic menu-btn" data-target=".business-section">
       <i class="fas fa-rocket"></i> Business 
     </button>
@@ -267,51 +264,6 @@
         </div>
       </div>
   </section>
-
-  <!-- Shop Section -->
-  <section class="shop-section box-outer hidden">
-  <i class="fas fa-shop" title="market"></i>
-  <h2>Online Store</h2>
-
-  <!-- Kategori -->
-  <nav class="shop-categories">
-    <button class="neumorphic" data-category="clothes">Clothes</button>
-    <button class="neumorphic" data-category="trousers">Trousers</button>
-    <button class="neumorphic" data-category="accessories">Accessories</button>
-  </nav>
-
-  <!-- Search -->
-  <div class="search-bar">
-    <input type="text" id="searchInput" placeholder="Search Catalog . . ." />
-    <button onclick="searchItems()" class="search-btn neumorphic">
-      <i class="fas fa-search"></i>
-    </button>
-  </div>
-
-  <!-- Produk -->
-  <div class="scroll-wrapper box-inset">
-    <div class="scroll-container" id="productScroll"></div>
-  </div>
-
-  <!-- Navigasi -->
-  <div class="scroll-buttons">
-    <button id="prevBtn" class="neumorphic">←</button>
-    <button id="nextBtn" class="neumorphic">→</button>
-  </div>
-
-  <!-- Cart -->
-  <div class="cart-scroll box-inset">
-    <ul id="cart-list"></ul>
-    <p id="empty-cart">“ your cart is empty ”</p>
-  </div>
-  <div class="box-inset">
-    <p id="cart-total">Total : IDR 0</p>
-  </div>
-  <div class="cart-actions">
-    <a id="whatsapp-link" href="#" class="neumorphic" target="_blank">Order Now</a>
-    <button id="clear-cart" class="neumorphic">Cancel All</button>
-  </div>
-  </section>  
   
   <!-- Business Section -->
   <section id="business" class="business-section box-outer hidden">
@@ -343,71 +295,50 @@
       </p>
       <a href="#" class="neumorphic business-link" target="_blank">Visit Business</a>
     </div>
+    <div class="business-card box-inset">
+      <img src="image/business/clothingstore.png" alt="Barbershop" class="business-thumb">
+      <h3>Clothing Store</h3>
+      <p>
+        Providing a personally curated selection of clothing and accessories, reflecting a style that is comfortable, unique and full of character.
+      </p>
+      <a href="#" class="neumorphic business-link" target="_blank">Visit Business</a>
+    </div>
   </div>
   </section>
 
-  <!-- Services Section -->
   <section id="services" class="services-section box-outer hidden">
   <i class="fas fa-cogs"></i> 
-  <h2>Official Service</h2> 
+  <h2>Creative Studio Services</h2> 
   <div class="services-grid"> 
     <div class="services-card box-inset">
+      <i class="fas fa-lightbulb"></i>
+      <h3>Brand & Design</h3>
+      <p>We build authentic visual images — from logos and colors to visual narratives that convey your personal and business character..</p>
+    </div>
+    <div class="services-card box-inset">
       <i class="fas fa-tshirt"></i>
-      <h3>Fashion Creativity</h3>
-      <p>Providing a personally curated selection of clothing and accessories, reflecting a style that is comfortable, unique and full of character.</p>
+      <h3>Wearable Products</h3>
+      <p>Fashion with a message. A collection of clothing and accessories specially curated to express your lifestyle, values, and story..</p>
     </div>
     <div class="services-card box-inset">
-      <i class="fas fa-palette"></i>
-      <h3>Custom Design</h3>
-      <p>Personalize your fashion items with custom artwork or embroidery, designed to match your identity and lifestyle.</p>
+      <i class="fas fa-code"></i>
+      <h3>Web & Digital Build</h3>
+      <p>We design UI/UX, websites, and digital platforms that not only work — but also reflect who you are and what you stand for.</p>
     </div>
     <div class="services-card box-inset">
-      <i class="fas fa-globe"></i>
-      <h3>Global Reach</h3>
-      <p>Shipping available to international destinations, expanding access to our unique fashion collection worldwide.</p>
-    </div>
-    <div class="services-card box-inset">
-      <i class="fas fa-shopping-cart"></i>
-      <h3>Order Products</h3>
-      <p>Make it easy to order your choice of fashion products with a fast and convenient process, directly from this website.</p>
+      <i class="fas fa-store"></i>
+      <h3>Retail Experience</h3>
+      <p>From coffee shops to barbershops, we present physical spaces designed as part of our creative ecosystem — where ideas meet reality..</p>
     </div>
     <div class="services-card box-inset">
       <i class="fas fa-truck"></i>
-      <h3>Logistics Delivery</h3>
-      <p>Product delivery to your address with reliable and timely service, guaranteeing online shopping satisfaction.</p>
+      <h3>Smart Delivery</h3>
+      <p>Our products are shipped throughout Indonesia (and the world), with packaging & shipping that aligns with our brand experience..</p>
     </div>
     <div class="services-card box-inset">
-      <i class="fas fa-headset"></i>
-      <h3>Customer Service</h3>
-      <p>Providing support and consultation at any time, helping to resolve questions or issues regarding products and services.</p>
-    </div>
-  </div>
-  </section>
-  
-  <!-- Services Section -->
-  <section id="services" class="services-section box-outer hidden">
-  <i class="fas fa-cogs"></i> 
-  <h2>What We Do</h2> 
-  <div class="services-grid"> 
-    <div class="services-card box-inset">
-      <i class="fas fa-tshirt"></i>
-      <h3>Fashion Creativity</h3>
-      <p>Providing a personally curated selection of clothing and accessories, reflecting a style that is comfortable, unique and full of character.</p>
-    </div>
-    <div class="services-card box-inset">
-      <i class="fas fa-shopping-cart"></i>
-      <h3>Order Products</h3>
-      <p>Make it easy to order your choice of fashion products with a fast and convenient process, directly from this website.</p>
-    </div>
-    <div class="services-card box-inset">
-      <i class="fas fa-truck"></i>
-      <h3>Logistics Delivery</h3>
-      <p>Product delivery to your address with reliable and timely service, guaranteeing online shopping satisfaction.</p>
-    </div>
-    <div class="services-card box-inset">
-      <i class="fas fa-headset"></i>
-      <h3>Customer Service</h3>
-      <p>Providing support and consultation at any time, helping to resolve questions or issues regarding products and services.</p>
+      <i class="fas fa-comments"></i>
+      <h3>Creative Consultation</h3>
+      <p>We are open for collaboration and branding consultation — from individuals, communities, to businesses looking to create a meaningful identity.</p>
     </div>
   </div>
   </section>
