@@ -441,26 +441,3 @@ document.querySelector('footer').setAttribute('translate', 'no');
 // ============================================= //
 
 
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(async function(position) {
-      const lat = position.coords.latitude;
-      const lon = position.coords.longitude;
-
-      try {
-        const response = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`);
-        const data = await response.json();
-
-        if (data && data.display_name) {
-          document.getElementById("user-full").innerText = data.display_name;
-        } else {
-          document.getElementById("user-full").innerText = `Lat: ${lat.toFixed(4)}, Lon: ${lon.toFixed(4)}`;
-        }
-      } catch (error) {
-        document.getElementById("user-full").innerText = "Gagal ambil alamat";
-      }
-    }, function(error) {
-      document.getElementById("user-full").innerText = "Tidak bisa ambil lokasi";
-    });
-  } else {
-    document.getElementById("user-full").innerText = "Browser tidak support";
-  }
