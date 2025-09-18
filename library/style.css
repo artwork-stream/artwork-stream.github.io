@@ -729,7 +729,7 @@ footer a {
 
 .scroll-wrapper {
   overflow: hidden;
-  max-width: 100%;
+  width: 100%;
 }
 
 .scroll-container {
@@ -739,30 +739,25 @@ footer a {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   width: 100%;
-  min-height: 420px;
 }
 
 .product-item {
   flex: 0 0 100%;
   max-width: 100%;
-  min-height: 400px;
-  overflow: hidden;
   scroll-snap-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   padding: 20px;
   box-sizing: border-box;
   text-align: center;
 }
 
 .product-item img {
-  width: 80%;
-  height: 100%;
-  object-fit: cover;
-  aspect-ratio: 1 / 1;
+  width: 70%;
   border-radius: var(--radius);
+  border: 1px solid var(--border);
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
