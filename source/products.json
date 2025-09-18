@@ -1,11 +1,11 @@
 [
-  { "name": "Clothes A-301", "price": 150000, "category": "product-1", "image": "assets/image/product/image.png" },
-  { "name": "Clothes A-302", "price": 250000, "category": "product-1", "image": "assets/image/product/image.png" },
-  { "name": "Clothes A-303", "price": 350000, "category": "product-1", "image": "assets/image/product/image.png" },
-  { "name": "Trousers B-301", "price": 150000, "category": "product-2", "image": "assets/image/product/image.png" },
-  { "name": "Trousers B-302", "price": 250000, "category": "product-2", "image": "assets/image/product/image.png" },
-  { "name": "Trousers B-303", "price": 350000, "category": "product-2", "image": "assets/image/product/image.png" },
-  { "name": "Accessories C-301", "price": 150000, "category": "product-3", "image": "assets/image/product/image.png" },
-  { "name": "Accessories C-302", "price": 250000, "category": "product-3", "image": "assets/image/product/image.png" },
-  { "name": "Accessories C-303", "price": 350000, "category": "product-3", "image": "assets/image/product/image.png" }
+  { "name": "Clothes A-301", "price": 150000, "category": "product-1", "image": "assets/image/product/clothes-01.png" },
+  { "name": "Clothes A-302", "price": 250000, "category": "product-1", "image": "assets/image/product/clothes-02.png" },
+  { "name": "Clothes A-303", "price": 350000, "category": "product-1", "image": "assets/image/product/clothes-03.png" },
+  { "name": "Trousers B-301", "price": 150000, "category": "product-2", "image": "assets/image/product/trousers-01.png" },
+  { "name": "Trousers B-302", "price": 250000, "category": "product-2", "image": "assets/image/product/trousers-02.png" },
+  { "name": "Trousers B-303", "price": 350000, "category": "product-2", "image": "assets/image/product/trousers-03.png" },
+  { "name": "Accessories C-301", "price": 150000, "category": "product-3", "image": "assets/image/product/accessories-01.png" },
+  { "name": "Accessories C-302", "price": 250000, "category": "product-3", "image": "assets/image/product/accessories-02.png" },
+  { "name": "Accessories C-303", "price": 350000, "category": "product-3", "image": "assets/image/product/accessories-03.png" }
 ]
