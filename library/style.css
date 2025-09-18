@@ -739,13 +739,13 @@ footer a {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   width: 100%;
-  min-height: 400px;
+  min-height: 420px;
 }
 
 .product-item {
   flex: 0 0 100%;
   max-width: 100%;
-  min-height: 300px;
+  min-height: 400px;
   overflow: hidden;
   scroll-snap-align: center;
   display: flex;
@@ -759,7 +759,7 @@ footer a {
 
 .product-item img {
   width: 80%;
-  height: 80%;
+  height: 100%;
   object-fit: cover;
   aspect-ratio: 1 / 1;
   border-radius: var(--radius);
